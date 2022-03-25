@@ -1,0 +1,74 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+.container h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.form {
+    width: 300px;
+    height: 390px;
+    border: 1px solid rgba(180, 180, 180, 0.158);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+     rgba(0, 0, 0, 0.3) 0px 3px 5px -3px;}
+.form section {
+    width: 90%;
+}
+.formContainerInput {
+    width: 100%;
+    position: relative;
+    margin-bottom: 32px;
+   
+}
+.formContainerInput input {
+    padding-left: 5px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(37, 99, 235,.5);
+}
+
+.formContainerInput .borderFocus {
+    width: 0;
+    height: 2px;
+    background-color: rgba(37, 99, 235,.8);
+    position: absolute;
+    top: 2.23rem;
+    left: 0;
+    transition: width .4s;
+}
+.formContainerInput input:focus + .borderFocus {
+    width: 100%;
+}
+.formContainerInput span {
+    position: absolute;
+    font-size: .8rem;
+    font-weight: 600;
+    color: #FD5D5D;
+    top: 40px;
+    left:5px;
+}
+.btnSubmit {
+    width: 90%;
+    background-color: #00bffe;
+    color: rgb(249 250 251);
+    font-weight: 500;
+    font-size: 1.3rem;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 4px;
+    transition: background-color 800ms;
+    
+}
+.btnSubmit:hover {
+    background-color: #03ade6;
+}
