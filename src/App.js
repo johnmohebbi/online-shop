@@ -9,7 +9,7 @@ function App() {
       <Provider store={store}>
         <Header />
         <Main />
-        <div className="h-20 bg-red-800 text-white">footer</div>
+        {/* <div className="h-20 bg-red-800 text-white">footer</div> */}
       </Provider>
     </>
   );

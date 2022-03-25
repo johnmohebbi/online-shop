@@ -4,9 +4,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      transitionProperty: {
-        'display': 'display',
-      }
+      
     },
   },
   plugins: [],

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 
 // import { ProductsData } from "../Shared/ProductsData";
 import Cart from "../Shared/Cart";
+import "../components/pages/Home/disableArrows.css"
 const ProductsSlider = () => {
   const {ProductsData} = useSelector(state=>state.products);
 
@@ -18,12 +19,13 @@ const ProductsSlider = () => {
     speed: 1200,
     autoplaySpeed: 2000,
     cssEase: "linear",
+  
     
   };
   return (
     <>
       <h2 className="text-2xl mt-4 mb-5 underline underline-offset-4">Products: </h2>
-      <Slider {...settings}>
+      <Slider {...settings} >
         < >
           <Cart image={`assets/images/${ProductsData[0].imageUrl}/${ProductsData[0].name}${ProductsData[0].imageFormat}`} productData={ProductsData[0]} />
         </>

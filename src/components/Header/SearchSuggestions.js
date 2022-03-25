@@ -1,15 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const SearchSuggestions = ({ product }) => {
-  console.log(product);
+const SearchSuggestions = (props) => {
   return (
-    <li className="flex py-1">
-        <div className="w-12 h-12">
-            <img className="w-full" src={product.url} alt={product.name} />
+    <li className="hover:bg-indigo-50 cursor-pointer border-b pb-2 border-slate-300">
+        <Link
+          to={`Shop/${props.product.name}`}
+          onClick={() => props.Handler(props.product)}
+          className="flex"
+        >
+      <div className="w-12">
+        <img
+          className="w-full "
+          src={props.product.url}
+          alt={props.product.name}
+        />
+      </div>
+        <div className="ml-2">
+          <h3 className="font-semibold hover:text-indigo-400">{props.product.name}</h3>
         </div>
-        <div>
-            <h3>{product.name}</h3>
-        </div>
+      </Link>
     </li>
   );
 };
