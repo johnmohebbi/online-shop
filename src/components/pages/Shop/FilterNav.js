@@ -17,7 +17,6 @@ const FilterNav = () => {
       dispatch(filterProductGender(event.target.dataset.name));
     else if (event.target.dataset.name === "allProducts") {
       dispatch(allProducts(event.target.dataset.name));
-      console.log('ok');
     } else {
       dispatch(filterProduct(event.target.dataset.name));
     }
@@ -52,7 +51,7 @@ const FilterNav = () => {
         <section
           className={`px-3 py-2 ${
             isShowFilterNavBar ? "-translate-x-[25px]" : "-translate-x-[800px]"
-          } transition-transform duration-1000 absolute top-0 left-0 w-[200px] h-96 md:translate-x-0 md:static md:flex md:h-auto md:w-fit`}
+          } bg-emerald-400/80 rounded shadow-xl transition-transform duration-1000 absolute top-0 left-0 w-[200px] h-auto md:translate-x-0 md:static md:flex md:h-auto md:w-fit md:bg-transparent md:shadow-none`}
         >
           <button
             onClick={filterhandler}

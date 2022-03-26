@@ -7,7 +7,7 @@ import SampleProducts from "./SampleProducts";
 import MenBanner from "./MenBanner";
 import WomenBanner from "./WomenBanner";
 import SampleShoes from "./SampleShoes";
-import SampleShirt from './SampleShirt';
+import SampleShirt from "./SampleShirt";
 const Home = () => {
   return (
     <>
@@ -19,7 +19,6 @@ const Home = () => {
         <SampleShoes />
         <WomenBanner />
         <SampleShirt />
-
       </section>
     </>
   );

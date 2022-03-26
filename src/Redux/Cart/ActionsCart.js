@@ -27,9 +27,9 @@ const decrease = (product) => {
     payload: product,
   };
 };
-const checkout = () => {
+const checkoutAction = () => {
   return {
     type: "CHECKOUT",
   };
 };
-export { addTOCart, removeAll, checkout, removeProduct, increase, decrease };
+export { addTOCart, removeAll, checkoutAction, removeProduct, increase, decrease };

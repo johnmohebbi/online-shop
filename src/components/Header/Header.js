@@ -14,12 +14,13 @@ import Logo from "../../assets/images/logo.png";
 import SearchSuggestions from "./SearchSuggestions";
 const Header = () => {
   const { searchSuggestions } = useSelector((state) => state.products);
+  const {amount} = useSelector((state) => state.cart);
+
   const dispatch = useDispatch();
   const [isSuggestion, setIsSuggestion] = useState(false);
   const [sidebarShow, setSidebarShow] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const searchHandler = (event) => {
-    
     setSearchValue(event.target.value);
   };
 
@@ -32,8 +33,8 @@ const Header = () => {
     if (searchValue.trim()) {
       setIsSuggestion(true);
       dispatch(searchAction(searchValue));
-    }else {
-      setIsSuggestion(false)
+    } else {
+      setIsSuggestion(false);
     }
   }, [searchValue, dispatch]);
   return (
@@ -42,7 +43,7 @@ const Header = () => {
       <header className="bg-slate-200 md:flex  md:justify-between py-2">
         <section className="flex px-2 justify-between  items-center md:justify-start">
           <div className="logo w-12">
-            <img className="w-full" src={Logo} alt="logo" />
+            <img className="w-full" src={Logo} alt="logo" loading="lazy" />
           </div>
           <div className="md:hidden">
             <svg
@@ -135,8 +136,8 @@ const Header = () => {
               </ul>
             ) : null}
           </div>
-          <Link to="cart">
-            <div className="md:pl-2">
+          <div className="md:pl-2 relative">
+            <Link to="cart">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -151,8 +152,9 @@ const Header = () => {
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                 />
               </svg>
-            </div>
-          </Link>
+            </Link>
+            <span className="font-semibold text-red-600 absolute -bottom-2 -right-1">{amount}</span>
+          </div>
         </div>
       </header>
     </>

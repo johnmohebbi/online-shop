@@ -16,7 +16,7 @@ const Product = (props) => {
     
       <div onClick={(e)=> props.clickHandler(product)} className="flex flex-row-reverse  w-[90%] mx-auto md:mx-0 mb-2 md:max-w-sm rounded-md shadow-md border-2 md:mb-5">
         <div className="p-4">
-          <img className="" src={product.url} alt={`${product.name}`} />
+          <img className="" src={product.url} alt={`${product.name}`} loading="lazy"/>
         </div>
         <div className="px-4 pb-3 flex flex-col justify-between">
             <section>

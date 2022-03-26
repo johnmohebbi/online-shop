@@ -4,7 +4,7 @@ import WomenB from "../../../assets/images/banner/womenBanner.jpg";
 const WomenBanner = () => {
   return (
     <div>
-      <img className="w-full md:h-[500px] " src={WomenB} alt="WomenBanner" />
+      <img className="w-full md:h-[500px] " src={WomenB} alt="WomenBanner" loading="lazy"/>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 // import { ProductsData } from "../Shared/ProductsData";
 import Cart from "../Shared/Cart";
 import "../components/pages/Home/disableArrows.css"
+import { Link } from "react-router-dom";
 const ProductsSlider = () => {
   const {ProductsData} = useSelector(state=>state.products);
 
@@ -39,7 +40,7 @@ const ProductsSlider = () => {
           <Cart image={`assets/images/${ProductsData[8].imageUrl}/${ProductsData[8].name}${ProductsData[8].imageFormat}`} productData={ProductsData[8]} />
         </>
       </Slider>
-      <button  type="button" className="mb-3 text-white bg-[#4285F4] font-medium rounded-sm text-sm px-5 py-1.5 inline-flex items-center">Products</button>
+      <Link  to="shop" className="mb-3 text-white bg-[#4285F4] font-medium rounded-sm text-sm px-5 py-1.5 inline-flex items-center">Products</Link>
     </>
   );
 };

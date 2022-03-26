@@ -5,7 +5,10 @@ const initialState = {
   totalPrice: 0,
   checkout:false,
 };
-
+const mountCounter = (data) =>{
+  const cartbalance = data.length;
+  return cartbalance
+}
 const CartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
@@ -18,7 +21,8 @@ const CartReducer = (state = initialState, action) => {
           ...state,
           checkout:false,
           selectProducts: state.selectProducts,
-          totalPrice:amountCounter(state.selectProducts)
+          totalPrice:amountCounter(state.selectProducts),
+          amount: mountCounter(state.selectProducts)
         };
       }
       return {
@@ -28,7 +32,8 @@ const CartReducer = (state = initialState, action) => {
           state.selectProducts,
           action.payload.id
         ),
-        totalPrice:amountCounter(state.selectProducts)
+        totalPrice:amountCounter(state.selectProducts),
+        amount: mountCounter(state.selectProducts)
 
       };
     case "INCREASE":
@@ -38,7 +43,7 @@ const CartReducer = (state = initialState, action) => {
           state.selectProducts,
           action.payload.id
         ),
-        totalPrice:amountCounter(state.selectProducts)
+        totalPrice:amountCounter(state.selectProducts),
 
       };
     case "DECREASE":
@@ -48,7 +53,8 @@ const CartReducer = (state = initialState, action) => {
           state.selectProducts,
           action.payload.id
         ),
-        totalPrice:amountCounter(state.selectProducts)
+        totalPrice:amountCounter(state.selectProducts),
+        
 
       };
     case "REMOVE_PRODUCT":
@@ -58,7 +64,8 @@ const CartReducer = (state = initialState, action) => {
       return {
         ...state,
         selectProducts: filter,
-        totalPrice:amountCounter(filter)
+        totalPrice:amountCounter(filter),
+        amount: mountCounter(filter)
 
       };
     case "REMOVE_ALL":

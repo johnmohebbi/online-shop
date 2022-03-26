@@ -3,6 +3,7 @@ import Slider from "react-slick";
 //redux
 import { useSelector } from "react-redux";
 import Cart from "../../../Shared/Cart";
+import { Link } from "react-router-dom";
 
 const SampleShirt = () => {
   const {ProductsData} = useSelector(state=>state.products);
@@ -36,12 +37,12 @@ const SampleShirt = () => {
           }
         })}
       </Slider>
-      <button
-        type="button"
+      <Link
+        to="shop"
         className="mb-3 text-white bg-[#4285F4] font-medium rounded-sm text-sm px-5 py-1.5 inline-flex items-center"
       >
         Products
-      </button>
+      </Link>
     </>
   );
 };
