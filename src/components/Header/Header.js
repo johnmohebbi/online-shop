@@ -94,17 +94,17 @@ const Header = () => {
                 </Link>
               </li>
               <li className="mb-2 transition text-slate-800 md:text-slate-500 hover:text-slate-800 md:mb-0 md:pl-2 cursor-pointer">
-                <Link to="Shop" onClick={() => setSidebarShow(false)}>
+                <Link to="shop" onClick={() => setSidebarShow(false)}>
                   Shop
                 </Link>
               </li>
               <li className="mb-2 transition text-slate-800 md:text-slate-500 hover:text-slate-800 md:mb-0 md:pl-2 cursor-pointer">
-                <Link to="About" onClick={() => setSidebarShow(false)}>
+                <Link to="about" onClick={() => setSidebarShow(false)}>
                   About
                 </Link>
               </li>
               <li className="mb-2 transition text-slate-800 md:text-slate-500 hover:text-slate-800 md:mb-0 md:pl-2 cursor-pointer">
-                <Link to="Contact" onClick={() => setSidebarShow(false)}>
+                <Link to="contact" onClick={() => setSidebarShow(false)}>
                   Contact
                 </Link>
               </li>
