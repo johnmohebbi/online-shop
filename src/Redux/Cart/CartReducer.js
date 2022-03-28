@@ -1,14 +1,18 @@
-import { increaseProduct, deacreseProduct,amountCounter } from "../../assets/functions";
+import {
+  increaseProduct,
+  deacreseProduct,
+  amountCounter,
+} from "../../assets/functions";
 const initialState = {
   selectProducts: [],
-  amount:0,
+  amount: 0,
   totalPrice: 0,
-  checkout:false,
+  checkout: false,
 };
-const mountCounter = (data) =>{
+const CounterLength = (data) => {
   const cartbalance = data.length;
-  return cartbalance
-}
+  return cartbalance;
+};
 const CartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
@@ -19,22 +23,21 @@ const CartReducer = (state = initialState, action) => {
         state.selectProducts.push({ ...action.payload, quantity: 1 });
         return {
           ...state,
-          checkout:false,
+          checkout: false,
           selectProducts: state.selectProducts,
-          totalPrice:amountCounter(state.selectProducts),
-          amount: mountCounter(state.selectProducts)
+          totalPrice: amountCounter(state.selectProducts),
+          amount: CounterLength(state.selectProducts),
         };
       }
       return {
         ...state,
-        checkout:false,
+        checkout: false,
         selectProducts: increaseProduct(
           state.selectProducts,
           action.payload.id
         ),
-        totalPrice:amountCounter(state.selectProducts),
-        amount: mountCounter(state.selectProducts)
-
+        totalPrice: amountCounter(state.selectProducts),
+        amount: CounterLength(state.selectProducts),
       };
     case "INCREASE":
       return {
@@ -43,19 +46,15 @@ const CartReducer = (state = initialState, action) => {
           state.selectProducts,
           action.payload.id
         ),
-        totalPrice:amountCounter(state.selectProducts),
-
+        totalPrice: amountCounter(state.selectProducts),
       };
     case "DECREASE":
+      const newData = deacreseProduct(state.selectProducts, action.payload.id);
       return {
         ...state,
-        selectProducts: deacreseProduct(
-          state.selectProducts,
-          action.payload.id
-        ),
-        totalPrice:amountCounter(state.selectProducts),
-        
-
+        amount: CounterLength(newData),
+        selectProducts: newData,
+        totalPrice: amountCounter(state.selectProducts),
       };
     case "REMOVE_PRODUCT":
       const filter = state.selectProducts.filter(
@@ -64,9 +63,8 @@ const CartReducer = (state = initialState, action) => {
       return {
         ...state,
         selectProducts: filter,
-        totalPrice:amountCounter(filter),
-        amount: mountCounter(filter)
-
+        totalPrice: amountCounter(filter),
+        amount: CounterLength(filter),
       };
     case "REMOVE_ALL":
       return {
@@ -74,12 +72,12 @@ const CartReducer = (state = initialState, action) => {
         amount: 0,
         totalPrice: 0,
       };
-      case "CHECKOUT":
+    case "CHECKOUT":
       return {
         selectProducts: [],
         amount: 0,
         totalPrice: 0,
-        checkout:true,
+        checkout: true,
       };
     default:
       return state;

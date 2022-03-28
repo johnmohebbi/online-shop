@@ -83,7 +83,7 @@ const ShoppingCart = () => {
               >
                 {/* image */}
                 <div className="w-20 md:w-36">
-                  <img src={product.url} alt={product.url} loading="lazy"/>
+                  <img src={product.url} alt={product.url} loading="lazy" />
                 </div>
                 {/* name */}
                 <div className="font-semibold md:text-lg self-start w-32 md:w-40 md:pt-1 -ml-4 truncate">
@@ -149,4 +149,4 @@ const ShoppingCart = () => {
   );
 };
 
-export default ShoppingCart;
+export default React.memo(ShoppingCart);

@@ -1,7 +1,19 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/Roboto/Roboto-Regular.ttf') format('TrueType');
+    src: url('assets/Roboto/Roboto-Regular.woff') format('woff'),
+        url('assets/Roboto/Roboto-Regular.woff2') format('woff2');
+    
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    body {
+        font-family:'Roboto',sans-serif;
+    }
+}
 /* .suggestionWidth {
     width: 95vw ; 
 } */
