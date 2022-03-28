@@ -119,11 +119,11 @@ const ShoppingCart = () => {
             );
           })
         ) : (
-          <div>
-            <span className="font-medium text-gray-900">empty cart.</span>
+          <div className="">
+            <span className="font-medium text-gray-900 inline-blockmt-1">empty cart.</span>
             <Link
               to="/shop"
-              className="ml-1 mb-2 inline-block font-medium rounded-md text-xs px-3 py-1.5 leading-snug	 text-center text-white  bg-blue-700 hover:bg-blue-800"
+              className="ml-1 mt-1 mb-1 inline-block font-medium rounded-md text-xs px-3 py-1.5 leading-snug	 text-center transition-colors duration-300  text-blue-600 border-2 border-blue-600/75 hover:bg-blue-600 hover:text-white"
             >
               go to shop
             </Link>

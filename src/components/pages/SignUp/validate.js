@@ -23,6 +23,5 @@ export const validate = (data, type) => {
   } else {
     delete errors.password;
   }
-  console.log(errors);
   return errors;
 };

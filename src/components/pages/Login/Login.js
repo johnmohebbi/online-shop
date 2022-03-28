@@ -69,7 +69,7 @@ const Login = () => {
               onBlur={blurHandler}
               autoComplete="off"
             />
-            <span className="border-focus"></span>
+            <span className={Styles.borderFocus}></span>
             {errors.email && thouched.email && <span>{errors.email}</span>}
           </div>
           <div className={Styles.formContainerInput}>
@@ -83,7 +83,7 @@ const Login = () => {
               onBlur={blurHandler}
               autoComplete="off"
             />
-            <span className="border-focus"></span>
+            <span className={Styles.borderFocus}></span>
             {errors.password && thouched.password && (
               <span>{errors.password}</span>
             )}
