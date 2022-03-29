@@ -8,7 +8,6 @@ const Products = () => {
   const { filterProduct } = data;
   const dispatch = useDispatch();
   const productHandler = (product) => {
- 
     dispatch(selectProduct(product));
   };
   return (

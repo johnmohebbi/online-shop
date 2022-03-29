@@ -1,10 +1,10 @@
 import React from "react";
 
-const Box = () => {
+const Box = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-5 w-5 z-30 absolute top-[-30%] left-1/2 -translate-y-1/2 -translate-x-1/2"
+      className={`h-5 w-5 z-30 text-green-700 absolute top-[-30%] left-1/2 -translate-y-1/2 -translate-x-1/2 ${props.anim}`}
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"

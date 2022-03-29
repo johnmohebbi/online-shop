@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import { validate } from "../SignUp/validate";
 import Styles from "./styles/Login.module.css";
+import TitlePage from "../../../Shared/TitlePage";
 const Login = () => {
   const navigate = useNavigate();
   const [inputValues, setInputValues] = useState({
@@ -52,11 +53,13 @@ const Login = () => {
   useEffect(() => {
     setErrors(validate(inputValues, "login"));
   }, [inputValues]);
-
+  useEffect(() => {
+    TitlePage("Login");
+  }, []);
   return (
     <div className={Styles.container}>
       <form onSubmit={submitHandler} className={Styles.form}>
-      <h2>Login</h2>
+        <h2>Login</h2>
         <section>
           <div className={Styles.formContainerInput}>
             <input

@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import TitlePage from "../../../Shared/TitlePage";
 
 const Contact = () => {
+  useEffect(() => {
+    TitlePage("Contact");
+  }, []);
   return (
     <div className="md:mx-6 ">
       <section className="md:grid md:grid-cols-2 md:gap-x-2 md:pt-24 md:pb-24 ">

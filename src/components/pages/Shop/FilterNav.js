@@ -6,24 +6,23 @@ import {
   filterProductGender,
 } from "../../../Redux/Products/ActionProducts";
 //css
-import Styles from '../FilterNav.module.css';
+import Styles from "../FilterNav.module.css";
 
 const FilterNav = () => {
   const [isShowFilterNavBar, setIsShowFilterNavBar] = useState(false);
   const dispatch = useDispatch();
   const filterhandler = (event) => {
     const gender = ["man", "woman"];
-    if (gender.includes(event.target.dataset.name))
+    if (gender.includes(event.target.dataset.name.trim())) {
       dispatch(filterProductGender(event.target.dataset.name));
-    else if (event.target.dataset.name === "allProducts") {
+    } else if (event.target.dataset.name === "allProducts") {
       dispatch(allProducts(event.target.dataset.name));
     } else {
       dispatch(filterProduct(event.target.dataset.name));
     }
     setIsShowFilterNavBar(false);
   };
-  const hoverHandler = (e) =>{
-  }
+  const hoverHandler = (e) => {};
   return (
     <div>
       <nav className="relative md:static flex  flex-col items-start md:flex-row ">
@@ -49,7 +48,7 @@ const FilterNav = () => {
           filter
         </button>
         <section
-          className={`px-3 py-2 ${
+          className={`px-3 py-2 z-50 ${
             isShowFilterNavBar ? "-translate-x-[25px]" : "-translate-x-[800px]"
           } bg-emerald-400/80 rounded shadow-xl transition-transform duration-1000 absolute top-0 left-0 w-[200px] h-auto md:translate-x-0 md:static md:flex md:h-auto md:w-fit md:bg-transparent md:shadow-none`}
         >
@@ -61,7 +60,9 @@ const FilterNav = () => {
             All Products
           </button>
 
-          <ul className={`${Styles.filterContainer}  text-xl md:flex md:text-lg`}>
+          <ul
+            className={`${Styles.filterContainer}  text-xl md:flex md:text-lg`}
+          >
             <li className="mb-2 md:mb-0 md:pr-4" onMouseEnter={hoverHandler}>
               <button
                 onClick={filterhandler}

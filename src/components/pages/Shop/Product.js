@@ -1,24 +1,31 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 //redux
 import { useDispatch } from "react-redux";
 import { addTOCart } from "../../../Redux/Cart/ActionsCart";
-//svg
-// import ShoppingCartBtn from "./icons/ShoppingCartBtn";
-// import Box from "./icons/Box";
 
 const Product = (props) => {
   const dispatch = useDispatch();
+  const [svgData,setSvgData]= useState('')
   const product = props.product;
-
+  const ProductRef = useRef();
+  
   const addToCartHandler = (e) => {
     e.stopPropagation();
     dispatch(addTOCart(product));
   };
+  useEffect(() => {
+    ProductRef.current.classList.remove("scale-50");
+    ProductRef.current.classList.add("scale-100");
+    ProductRef.current.classList.remove("opacity-0");
+    ProductRef.current.classList.add("opacity-100");
+  }, []);
   return (
     <div
+      ref={ProductRef}
       onClick={(e) => props.clickHandler(product)}
-      className="flex flex-row-reverse  w-[90%] mx-auto md:mx-0 mb-2 md:max-w-sm rounded-md shadow-md border-2 md:mb-5"
+      className="flex flex-row-reverse w-[90%] mx-auto md:mx-0 mb-2 md:max-w-sm rounded-md shadow-md border-2 md:mb-5
+      transition-all duration-400 ease-in-out  scale-50 opacity-0"
     >
       <div className="p-4">
         <img
@@ -84,17 +91,15 @@ const Product = (props) => {
         <div className="flex flex-col justify-between text-lg font-semibold">
           <p className="mb-5">${product.price}</p>
           <button
-            className="text-white relative transition-all duration-400 anima overflow-hidden bg-blue-700 hover:bg-blue-800  font-medium rounded-md text-xs px-3 py-1.5 text-center grow active:scale-90"
+            className="text-white relative transition-all duration-400 anima  bg-blue-700 hover:bg-blue-800  font-medium rounded-md text-xs px-3 py-1.5 text-center grow active:scale-90"
             onClick={addToCartHandler}
           >
-            add to cart
-            {/* <ShoppingCartBtn />
-            <Box /> */}
+            {svgData? "added":"add to cart"}
+            
           </button>
         </div>
       </div>
     </div>
   );
 };
-
 export default Product;

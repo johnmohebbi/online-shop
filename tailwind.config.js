@@ -5,18 +5,20 @@ module.exports = {
       keyframes: {
         cart: {
           "0%": { left: "-10%" },
-          "40%, 60%": { left: "50%" },
-          "100%": { transform: "left: 110%;" },
+          "40%, 60%": { left: "40%" },
+          "100%": { left: "120%" },
         },
         box: {
-          "0%,40%": { top: "-20%" },
-          " 60%": { top: "40%", left: "52%" },
-          "100%": { top: " 40%", left: "112%" },
+          "0%": { top: "5%" },
+          "10%": { top: "5%" },
+          "35%": { top: "15%" },
+      
+          "100%": { left: "120%" },
         },
       },
         animation: {
           cart: "cart 1s ease-in-out",
-          box: "box 2s ease-in-out",
+          box: "box 1.5s ease-in-out",
         },
     },
   },

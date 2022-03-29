@@ -14,7 +14,7 @@ import Logo from "../../assets/images/logo.png";
 import SearchSuggestions from "./SearchSuggestions";
 const Header = () => {
   const { searchSuggestions } = useSelector((state) => state.products);
-  const {amount} = useSelector((state) => state.cart);
+  const { amount } = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
   const [isSuggestion, setIsSuggestion] = useState(false);
@@ -42,8 +42,15 @@ const Header = () => {
       <Register />
       <header className="bg-slate-200 md:flex  md:justify-between py-2">
         <section className="flex px-2 justify-between  items-center md:justify-start">
-          <div className="logo w-12">
-            <img className="w-full" src={Logo} alt="logo" loading="lazy" />
+          <div className="logo w-20 relative">
+            <Link to='/'>
+              <img
+                className="w-full absolute -top-9 left-0 "
+                src={Logo}
+                alt="logo"
+                loading="lazy"
+              />
+            </Link>
           </div>
           <div className="md:hidden">
             <svg
@@ -153,7 +160,9 @@ const Header = () => {
                 />
               </svg>
             </Link>
-            <span className="font-semibold text-red-600 absolute -bottom-2 -right-1">{amount}</span>
+            <span className="font-semibold text-red-600 absolute -bottom-2 -right-1">
+              {amount}
+            </span>
           </div>
         </div>
       </header>

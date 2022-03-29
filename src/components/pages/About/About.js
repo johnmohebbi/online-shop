@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ManSuit from "../../../assets/images/about/manSuit.jpg";
 import Beach from "../../../assets/images/about/beach.jpg";
+import TitlePage from "../../../Shared/TitlePage";
 const About = () => {
+  useEffect(() => {
+    TitlePage("About");
+  }, []);
   return (
     <div className="mx-6">
       <div>
@@ -12,20 +16,24 @@ const About = () => {
           ABOUT US
         </h3>
         <p className="z-40 mt-8 mb-12 text-center w-[90%] md:1/2 mx-auto text-lg font-light">
-          Lorem ipsum dolor sit amet, tempor incididunt ut  
-          <strong className="font-semibold  "> laboreconsectetur adipiscing elit, sed doeiusmod</strong>
+          Lorem ipsum dolor sit amet, tempor incididunt ut
+          <strong className="font-semibold  ">
+            {" "}
+            laboreconsectetur adipiscing elit, sed doeiusmod
+          </strong>
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco ullamco laboris nisi ut aliquip ex ea
-          commodo consequat.aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco ullamco laboris nisi ut aliquip ex ea
-          commodo consequat.
+          ullamco ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
       </div>
       {/*  */}
       <section>
         <div className="flex flex-col md:flex-row md:mb-36">
           <div className="mb-14 md:w-[45%]">
-            <h1 className="font-semibold text-2xl mb-3 text-neutral-800">our product</h1>
+            <h1 className="font-semibold text-2xl mb-3 text-neutral-800">
+              our product
+            </h1>
             <p className="text-justify font-medium text-neutral-700">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -66,7 +74,9 @@ const About = () => {
             />
           </div>
           <div className="mb-14 md:w-[45%] order-1 md:order-2">
-            <h1 className="font-semibold text-2xl mb-3 text-neutral-800 mt-16 md:mt-0">our history</h1>
+            <h1 className="font-semibold text-2xl mb-3 text-neutral-800 mt-16 md:mt-0">
+              our history
+            </h1>
             <p className="text-justify font-medium text-neutral-700">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
